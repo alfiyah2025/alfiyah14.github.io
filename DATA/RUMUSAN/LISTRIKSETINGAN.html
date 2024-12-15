@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listrik Settingan</title>
+
+  <meta property="og:title" content="Listrik Settingan">
+  <meta property="og:description" content="Membahas problematika penggantian MCB ilegal untuk memanipulasi subsidi.">
+  <meta property="og:image" content="https://safaribahtsulmasail.github.io/GAMBAR/MCB.jpeg">
+  <meta property="og:url" content="safaribahtsulmasail.github.io">
+  <meta property="og:type" content="Bahtsul Masail">
+  <meta property="og:site_name" content="safaribahtsulmasail.github.io">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Edu+TAS+Beginner:wght@400..700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    
+    
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #00a85a;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    .header.show {
+      transform: translateY(0);
+    }
+    .header img {
+      max-height: 40px;
+    }
+    .menu {
+      position: relative;
+      z-index: 10000;
+      margin-right: 20px;
+    }
+    .hamburger {
+      display: inline-block;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #f0f0f0;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+    .menu-items {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 50px;
+      right: 0px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      width: 150px;
+      transition: visibility 0s, opacity 0.5s ease;
+    }
+    .menu-items.show {
+      visibility: visible;
+      opacity: 1;
+    }
+    .menu-items button {
+      display: block;
+      width: 100%;
+      padding: 10px 20px;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+    }
+    .menu-items button:hover {
+      background-color: #f0f0f0;
+    }
+    .change .bar1 {
+      transform: translateY(8px) rotate(-45deg);
+    }
+    .change .bar2 {
+      opacity: 0;
+    }
+    .change .bar3 {
+      transform: translateY(-8px) rotate(45deg);
+    }
+    .content {
+      padding: 20px;
+      max-width: 800px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+  font-family: 'Arial', sans-serif; /* Jenis font */
+  font-size: 2.5rem; /* Ukuran font */
+  font-weight: bold; /* Ketebalan font */
+  text-align: center; /* Pemusatan teks */
+  text-transform: uppercase; /* Mengubah teks menjadi huruf kapital semua */
+  letter-spacing: 1px; /* Jarak antar huruf */
+  line-height: 1.2; /* Jarak antar baris */
+  color: transparent; /* Menjadikan teks transparan untuk efek gradasi latar belakang */
+  background: linear-gradient(to right, #00A85A, #4CAF50); /* Gradasi latar belakang */
+  -webkit-background-clip: text; /* Memastikan gradasi latar belakang mengikuti teks pada browser Webkit */
+  background-clip: text; /* Memastikan gradasi latar belakang mengikuti teks pada browser lain */
+  border-bottom: 2px solid #00A85A; /* Garis bawah dengan warna yang sama */
+  padding-bottom: 10px; /* Jarak bawah teks dengan garis bawah */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+  margin-bottom: 20px; /* Jarak bawah */
+}
+
+
+   /* Gaya untuk paragraf */
+p {
+  color: #333; /* Warna teks */
+  line-height: 1.6; /* Jarak antar baris */
+  text-align: justify; /* Rata kiri-kanan */
+  font-size: 1rem; /* Ukuran font */
+  margin: 0 0 20px; /* Jarak bawah */
+  padding: 0 10px; /* Jarak dalam sisi kiri dan kanan */
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Bayangan teks */
+}
+
+/* Gaya untuk kelas .answer */
+.answer {
+  background-color: #f9f9f9; /* Warna latar belakang yang lebih terang */
+  color: #333; /* Warna teks */
+  padding: 20px; /* Jarak dalam */
+  border-radius: 8px; /* Radius sudut yang lebih besar */
+  margin-top: 20px; /* Jarak atas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+  border: 1px solid #ddd; /* Garis batas */
+  font-family: 'Arial', sans-serif; /* Jenis font sans-serif untuk teks */
+  font-size: 1rem; /* Ukuran font */
+}
+/* Gaya untuk section bahasa Arab */
+.arabic-section {
+  direction: rtl; /* Arah teks dari kanan ke kiri */
+  font-family: "Traditional Arabic", serif; /* Font untuk teks Arab */
+  font-size: 1em; /* Ukuran font seragam */
+  line-height: 1.6; /* Jarak antar baris */
+  color: #333; /* Warna teks */
+  padding: 0px; /* Jarak dalam */
+  margin: 5px 0; /* Jarak luar atas dan bawah */
+}
+
+/* Gaya untuk sumber dalam section bahasa Arab */
+.arabic-section .source {
+  margin-top: 5px; /* Jarak atas */
+  margin-bottom: 5px; /* Jarak bawah */
+  font-weight: bold; /* Tebal */
+  color: #00796b; /* Warna teks untuk kontras */
+  font-size: 1em; /* Ukuran font sama dengan konten */
+}
+
+/* Gaya untuk konten dalam section bahasa Arab */
+.arabic-section .content {
+  margin-bottom: 15px; /* Jarak bawah */
+}
+
+/* Gaya untuk paragraf dalam section bahasa Arab */
+.arabic-section .content p,
+.arabic-section .source p {
+  margin: 0; /* Menghilangkan margin default */
+  padding: 5px 0; /* Jarak dalam atas dan bawah untuk kenyamanan membaca */
+  text-align: justify; /* Rata kiri-kanan untuk teks yang panjang */
+  font-size: 1em; /* Ukuran font seragam */
+  line-height: 1.6; /* Jarak antar baris untuk keterbacaan yang lebih baik */
+}
+
+.gambar {
+  display: block; /* Menghapus spasi di bawah gambar */
+  max-width: 100%; /* Memastikan gambar tidak melewati lebar kontainer */
+  height: auto; /* Menjaga rasio aspek gambar */
+  border-radius: 10px; /* Menambahkan sudut membulat pada gambar */
+  margin: 0 auto; /* Mengatur margin kiri dan kanan otomatis untuk pemusatan */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan untuk efek kedalaman */
+} /* Container Styles */
+.reaction-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Like Button Styles */
+#likeButton {
+    background-color: #00a85a; /* Hijau */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#likeButton:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#likeButton:active {
+    transform: scale(0.95);
+}
+
+/* View Count Styles */
+#viewCount {
+    font-weight: bold;
+    margin-left: 5px;
+    color: #555;
+}
+
+/* Share Button Styles */
+.share-buttons button {
+    background-color: #f1f1f1;
+    border: none;
+    color: #555;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.share-buttons button:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+}
+
+.share-buttons button:active {
+    transform: scale(0.9);
+}
+
+/* Specific Button Colors */
+#shareWhatsApp {
+    color: #25D366; /* Warna hijau khas WhatsApp */
+}
+
+#shareOther {
+    color: #3b5998; /* Warna biru khas Facebook */
+}
+
+#copyUrlButton {
+    color: #ff9800; /* Warna oranye */
+}
+
+/* Icon Styles */
+.reaction-buttons .icon,
+.share-buttons .icon {
+    margin-right: 5px;
+}/* Mengimpor Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* Footer Styling */
+.footer {
+    background: linear-gradient(135deg, #004d40, #2e7d32); /* Gradasi hijau gelap */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Font utama */
+}
+
+/* Footer Container Styling */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Contact Info Styling */
+.contact-info {
+    max-width: 500px; /* Membatasi lebar konten */
+}
+
+.contact-info h1.f {
+    font-size: 24px; /* Ukuran teks elegan */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff; /* Teks berwarna kuning untuk kontras */
+    font-family: 'Playfair Display', serif; /* Font elegan untuk judul */
+}
+
+.contact-info p {
+    font-size: 14px; /* Ukuran teks kecil dan bersih */
+    line-height: 1.6;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white; /* Teks berwarna putih */
+}
+
+.contact-info .address {
+    margin: 0 auto; /* Menjaga alamat tetap di tengah */
+    text-align: left; /* Menjaga teks alamat tetap rapi */
+}
+
+.contact-info i {
+    font-size: 16px; /* Ukuran ikon lebih kecil */
+    color: white;
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    background-color: #ffffff33; /* Warna putih semi-transparan */
+    color: white;
+    width: 40px; /* Ukuran ikon yang seragam */
+    height: 40px;
+    font-size: 20px; /* Ukuran ikon konsisten */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Bentuk lingkaran sempurna */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: #ffeb3b; /* Background kuning saat di-hover */
+    color: #004d40;
+    transform: scale(1.2); /* Pembesaran saat hover */
+}
+
+/* Footer Bottom Styling */
+.footer-bottom .copy{
+    margin-top: 20px;
+    font-size: 12px; /* Ukuran teks copyright lebih kecil */
+    color: #b2fab4; /* Warna teks yang lembut */
+    border-top: 1px solid #ffffff33; /* Garis pemisah tipis */
+    padding-top: 10px;
+   
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Font yang bersih */
+}
+/* Responsive Styling */
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contact-info, .social-icons {
+        flex: 1;
+    }
+
+    .contact-info {
+        text-align: left;
+    }
+
+    .social-icons {
+        text-align: right;
+    }
+}/* Mengimpor Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+/* Wrapper untuk profil */
+.profil-wrapper {
+    max-width: 800px; /* Maksimal lebar untuk menjaga teks tetap rapi */
+    margin: 20px auto; /* Pusatkan wrapper secara horizontal dengan jarak lebih banyak */
+    border-radius: 10px; /* Sudut membulat yang lebih besar */
+}
+
+/* Wrapper untuk profil */
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #00a85a;
+}
+
+.name {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.name:last-child {
+    margin-bottom: 0;
+}
+  </style>
+</head>
+<body>
+  <div class="header" id="header">
+    <img class="IKON" src="../../GAMBAR/IKON.png" alt="Ikon">
+    <img class="JUDUL" src="../../GAMBAR/HEADER.png" alt="Judul">
+    <div class="menu">
+      <div class="hamburger" onclick="toggleMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <div class="menu-items" id="menuItems">
+        <button class="nav-button" onclick="showPage('../../index.html')">HOME</button>
+        <button class="nav-button" onclick="showPage('../KONTEN1.html')">HASIL KEPUTUSAN</button>
+        <button class="nav-button" onclick="showPage('../KONTEN3.html')">LIVE STREAMING</button>
+        <button class="nav-button" onclick="showPage('../../MAKTABAH/PERPUSTAKAAN.html')">MAKTABAH</button>
+        <button class="nav-button" onclick="showPage('gallery.html')">ADMIN</button>
+        <button class="nav-button" onclick="location.reload()">REFRESH</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+<img class="gambar" src="../../GAMBAR/MCB.jpeg" alt="">
+    <h1>Listrik Settingan</h1>
+    <p><strong>Deskripsi Masalah:</strong><br>
+    Kebutuhan masyarakat pada listrik semakin naik seiring kemajuan jaman, tidak hanya di kota, di pedesaan kebutuhan listrik juga meningkat pesat dengan adanya alat-alat elektronik yang bisa memudahkan pekerjaan rumah seperti Rice cooker, Kulkas, Pompa air, TV, bahkan kendaraan listrik.</p>
+    <p>Dengan demikian mengakibatkan listrik rumahan sering kali tidak kuat (red: Njeglek) untuk memenuhi kebutuhan-kebutuhan tersebut karena pada umumnya listrik rumahan menggunakan daya 450 (Subsidi) / 900 (Subsidi/Tidak). Oleh karena itu banyak dari kalangan masyarakat memanipulasi dengan menaikan daya listrik dengan cara mengganti MCB dan pemasangan tersebut biasanya dilakukan oleh orang-orang yang mengerti tentang listrik atau bahkan oknum petugas PLN dengan biaya berkisar Rp.200.000 sampai Rp.400.000.</p>
+    <p>Namun yang menjadi masalah adalah penggantian MCB dengan tujuan meningkatkan daya tersebut adalah tindakan illegal. Dalam kasus tersebut jika MCB daya 450 dinaikan tidak akan terbaca oleh sistem PLN selama tagihan listrik kurang dari Rp.100.000 dan jika melebihi itu maka konsekuensinya adalah terlacak sistem PLN dan bisa dikenakan denda / dinaikan daya oleh pihak PLN.</p>
+    <p><strong>Pertanyaan:</strong><br>
+    a. Boleh atau tidak mengganti MCB seperti deskripsi di atas?</p>
+    <div class="answer">
+      <p><strong>Jawaban: Tidak diperbolehkan</strong></p>
+      <p>Karena:<br>
+      - Tidak sesuai dengan kesepakatan<br>
+      - Tidak mematuhi aturan PLN<br>
+      - Ada unsur penipuan</p>
+    </div>
+  
+  <div class="arabic-section">
+    <div class="source">
+      <p>سراج المنير، ج 3 ص 406:</p>
+    </div>
+    <div class="content">
+      <p>عن احمد فى مسنده عن رجل من المهاجرين: المسلمون على شروطهم الجائزة شرعا اى ثابتون عليها واقفون عندها. قال العلقمى قال المنذر وهذا فى الشروط الجائزة دون الفاسدة وهو من باب امر فيه بالوفاء بالعقود يعنى عقود الدين وهو ما ينفذه المرء على نفسه ويشترط الوفاء من مصالحة ومواعدة وتمليك وعقد وتدبير وبيع واجارة ومناكحة وطلاق.</p>
+    </div>
+    <div class="source">
+      <p>الموسوعة الفقهية الكويتية (6/ 161):</p>
+    </div>
+    <div class="content">
+      <p>‌‌حُكْمُ الْوَفَاءِ بِالاِلْتِزَامِ وَمَا يَتَعَلَّقُ بِهِ: الأَصْل فِي الاِلْتِزَامِ أَنَّهُ يَجِبُ الْوَفَاءُ بِهِ امْتِثَالاً لِقَوْلِهِ تَعَالَى: {يَا أَيُّهَا الَّذِينَ آمَنُوا أَوْفُوا بِالْعُقُودِ} وَالْمُرَادُ بِالْعُقُودِ كَمَا يَقُول الْفُقَهَاءُ: مَا عَقَدَهُ الْمَرْءُ عَلَى نَفْسِهِ مِنْ بَيْعٍ وَشِرَاءٍ وَإِجَارَةٍ وَكِرَاءٍ وَمُنَاكَحَةٍ وَطَلَاقٍ وَمُزَارَعَةٍ وَمُصَالَحَةٍ وَتَمْلِيكٍ وَتَخْيِيرٍ وَعِتْقٍ وَتَدْبِيرٍ، وَكَذَلِكَ الْعُهُودُ وَالذِّمَمُ الَّتِي نَعْقِدُهَا لأَِهْل الْحَرْبِ وَأَهْل الذِّمَّةِ وَالْخَوَارِجِ، وَمَا عَقَدَهُ الإِنْسَانُ عَلَى نَفْسِهِ لِلَّهِ تَعَالَى مِنَ الطَّاعَاتِ كَالْحَجِّ وَالصِّيَامِ وَالاِعْتِكَافِ وَالنَّذْرِ وَالْيَمِينِ وَمَا أَشْبَهَ ذَلِكَ، فَيَلْزَمُ الْوَفَاءُ بِهَا. وَقَوْل النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ: الْمُسْلِمُونَ عَلَى شُرُوطِهِمْ عَامٌّ فِي إِيجَابِ الْوَفَاءِ بِجَمِيعِ مَا يَشْرِطُهُ الإِْنْسَانُ عَلَى نَفْسِهِ، مَا لَمْ تَقُمْ دَلَالَةٌ تُخَصِّصُهُ لَكِنَّ هَذَا الْحُكْمَ لَيْسَ عَامًّا فِي كُل الاِلْتِزَامَاتِ، وَذَلِكَ لِتَنَوُّعِ الاِلْتِزَامَاتِ بِحَسَبِ اللُّزُومِ وَعَدَمِهِ، وَبَيَانُ ذَلِكَ فِيمَا يَأْتِي:</p>
+    </div>
+    <div class="content">
+      <p>الاِلْتِزَامَاتُ الَّتِي يَجِبُ الْوَفَاءُ بِهَا:</p>
+      <p>الاِلْتِزَامَاتُ الَّتِي تَنْشَأُ بِسَبَبِ الْعُقُودِ اللَاّزِمَةِ بَيْنَ الطَّرَفَيْنِ، كَالْبَيْعِ وَالإِْجَارَةِ وَالصُّلْحِ وَعُقُودِ الذِّمَّةِ، فَهَذِهِ الاِلْتِزَامَاتُ مَتَى تَمَّتْ صَحِيحَةً لَازِمَةً وَجَبَ الْوَفَاءُ بِهَا مَا لَمْ يَحْدُثْ مَا يَقْتَضِي الْفَسْخَ، كَالْهَلَاكِ وَالاِسْتِحْقَاقِ وَالرَّدِّ بِالْعَيْبِ، وَهَذَا شَامِلٌ لِلأَعْيَانِ الْوَاجِبِ تَسْلِيمُهَا، وَلِلدُّيُونِ الَّتِي تَكُونُ فِي الذِّمَمِ كَبَدَل الْقَرْضِ وَثَمَنِ الْمَبِيعِ وَالأُجْرَةِ فِي الإِجَارَةِ أَوِ الَّتِي تَنْشَأُ نَتِيجَةَ إِنْفَاذِ مَال الْغَيْرِ عَلَى خِلَافٍ وَتَفْصِيلٍ.</p>
+    </div>
+    <div class="source">
+      <p>حواشي الشروانى وابن قاسم الجزء السادس ص: 184</p>
+    </div>
+    <div class="content">
+      <p>(لو اكترى لحمل مائة رطل حنطة فحمل مائة شعيرا أو عكس) لأنها لثقلها تجمع بمحل واحد وهو لخفته يأخذ من ظهر الدابة أكثر فاختلف ضررهما وكذا كل مختلفي الضرر كحديد وقطن ونازع فيه الأذرعي وأطال إذ لا فرق بينهما عرفا (أو) اكترى (لعشرة أقفزة شعير) جمع قفيز مكيال يسع اثني عشر صاعا (فحمل) عشرة أقفزة (حنطة) لأنها أثقل (دون عكسه) بأن اكتراه لحمل عشرة أقفزة حنطة فحمل عشرة أقفزة شعيرا من غير زيادة أصلا فلا يضمن لاتحاد جرمهما باتحاد كيلهما مع أن الشعير أخف (ولو اكترى لحمل مائة فحمل) بالتشديد (مائة وعشرة لزمه) مع المسمى (أجرة المثل للزيادة) لتعديه بها ومثل لها بالعشرة ليفيد اغتفار نحو الاثنين مما يقع التفاوت به بين الكيلين (وإن تلفت بذلك) المحمول أو بسبب آخر (ضمنها) ضمان يد (إن لم يكن صاحبها معها) *لأنه صار غاصبا لها بحمل الزيادة</p>
+    </div>
+    <div class="source">
+      <p>تحفة المحتاج</p>
+    </div>
+    <div class="content">
+      <p>وَذَكَرُوا فِي الْجَعَالَةِ أَنَّهُ يَجُوزُ أَخْذُ الْعِوَضِ عَلَى ‌النُّزُولِ ‌عَنْ ‌الْوَظَائِفِ نَعَمْ إنْ بَانَ بُطْلَانُ النُّزُولِ رَجَعَ بِمَا دَفَعَهُ وَإِنْ كَانَ قَدْ أَبْرَأَ مِنْهُ كَمَا أَفْتَى بِهِ بَعْضُهُمْ قَالَ؛ لِأَنَّ الْإِبْرَاءَ وَقَعَ فِي مُقَابَلَةِ اسْتِحْقَاقِ الْوَظِيفَةِ وَلَمْ تَحْصُلْ فَهُوَ كَمَا لَوْ صَالَحَهُ عَنْ عَشْرَةِ دَرَاهِمَ مُؤَجَّلَةً عَلَى خَمْسَةِ حَالَّةٍ فَالصُّلْحُ بَاطِلٌ؛ لِأَنَّهُ أَبْرَأهُ مِنْ الْخَمْسَةِ فِي مُقَابَلَةِ حُلُولِ الْبَاقِي وَهُوَ لَا يَحِلُّ. نَعَمْ قَضَى فِي الرَّمْلِيَّةِ النَّقْلِيَّةِ بِغَيْرِ ذَلِكَ فَلْيُتَأَمَّلْ. انتهى.</p>
+    </div>
+  </div>
+    <p><strong>Pertanyaan:</strong><br>
+    Jika tidak boleh, bagaimana solusi untuk masyarakat yang sudah terlanjur mengganti?</p>
+    <div class="answer">
+        <p><strong>Jawaban:</strong> Harus taubat dengan cara meresmikannya dan mengganti semua kerugian yang ditimbulkan.</p>
+    </div>
+    <div class="arabic-section">
+        <div class="source">
+          <p>إعانة الطالبين على حل ألفاظ فتح المعين (٣/ 162):</p>
+        </div>
+        <div class="content">
+          <p>فصل في بيان أحكام الغصب أي في بيان أحكام الغصب، كوجوب رده، ولزوم أرش نقصه، وأجرة مثله، إلى غير ذلك والمعتمد أنه كبيرة مطلقا، وقيل كبيرة إن كان المغصوب مالا بلغ نصاب سرقة، وإلا فصغيرة، كالإختصاص ونحوه.</p>
+        </div>
+        <div class="source">
+          <p>المجموع شرح المهذب (٩/ 351):</p>
+        </div>
+        <div class="content">
+          <p>فَرْعٌ قَالَ الْغَزَالِيُّ إذَا كَانَ مَعَهُ مَالٌ حَرَامٌ ‌وَأَرَادَ ‌التَّوْبَةَ وَالْبَرَاءَةَ مِنْهُ فَإِنْ كَانَ لَهُ مَالِكٌ مُعَيَّنٌ وَجَبَ صَرْفُهُ إلَيْهِ أَوْ إلَى وَكِيلِهِ فَإِنْ كَانَ مَيِّتًا وَجَبَ دَفْعُهُ إلَى وَارِثِهِ وَإِنْ كَانَ لِمَالِكٍ لَا يَعْرِفُهُ وَيَئِسَ مِنْ مَعْرِفَتِهِ فَيَنْبَغِي أَنْ يَصْرِفَهُ فِي مَصَالِحِ الْمُسْلِمِينَ الْعَامَّةِ كَالْقَنَاطِرِ وَالرُّبُطِ وَالْمَسَاجِدِ وَمَصَالِحِ طَرِيقِ مَكَّةَ وَنَحْوِ ذَلِكَ مِمَّا يَشْتَرِكُ الْمُسْلِمُونَ فِيهِ وَإِلَّا فَيَتَصَدَّقُ بِهِ عَلَى فَقِيرٍ أَوْ فُقَرَاءَ وَيَنْبَغِي أَنْ يَتَوَلَّى ذَلِكَ الْقَاضِي إنْ كَانَ عَفِيفًا فَإِنْ لَمْ يَكُنْ عَفِيفًا لَمْ يَجُزْ التَّسْلِيمُ إلَيْهِ فَإِنْ سَلَّمَهُ إلَيْهِ صَارَ الْمُسَلَّمُ ضَامِنًا بَلْ يَنْبَغِي أَنْ يُحَكِّمَ رَجُلًا مِنْ أهل البلد دينا عالما فان التحكم أَوْلَى مِنْ الِانْفِرَادِ فَإِنْ عَجَزَ عَنْ ذَلِكَ تَوَلَّاهُ بِنَفْسِهِ فَإِنَّ الْمَقْصُودَ هُوَ الصَّرْفُ إلَى هَذِهِ الْجِهَةِ وَإِذَا دَفَعَهُ إلَى الْفَقِيرِ لَا يَكُونُ حَرَامًا عَلَى الْفَقِيرِ بَلْ يَكُونُ حَلَالًا طَيِّبًا وَلَهُ أَنْ يَتَصَدَّقَ بِهِ عَلَى نَفْسِهِ وَعِيَالِهِ إذَا كَانَ فَقِيرًا لِأَنَّ عِيَالَهُ إذَا كَانُوا فُقَرَاءَ فَالْوَصْفُ مَوْجُودٌ فِيهِمْ بَلْ هُمْ أَوْلَى مَنْ يُتَصَدَّقُ عَلَيْهِ وَلَهُ هُوَ أَنْ يَأْخُذَ مِنْهُ قَدْرَ حَاجَتِهِ لِأَنَّهُ أَيْضًا فَقِيرٌ وَهَذَا الَّذِي قَالَهُ الْغَزَالِيُّ فِي هَذَا الْفَرْعِ ذَكَرَهُ آخَرُونَ مِنْ الْأَصْحَابِ وَهُوَ كَمَا قَالُوهُ ونقله الْغَزَالِيُّ أَيْضًا عَنْ مُعَاوِيَةَ بْنِ أَبِي سُفْيَانَ وَغَيْرِهِ مِنْ السَّلَفِ عَنْ أَحْمَدَ بْنِ حَنْبَلٍ وَالْحَارِثِ الْمُحَاسِبِيِّ وَغَيْرِهِمَا مِنْ أَهْلِ الْوَرَعِ لِأَنَّهُ لَا يَجُوزُ إتْلَافُ هَذَا الْمَالِ وَرَمْيُهُ فِي الْبَحْرِ فَلَمْ يَبْقَ إلَّا صَرْفُهُ فِي مَصَالِحِ الْمُسْلِمِينَ وَاَللَّهُ سُبْحَانَهُ وَتَعَالَى أَعْلَمُ</p>
+        </div>
+        <div class="source">
+          <p>تحفة المحتاج في شرح المنهاج وحواشي الشرواني والعبادي (٧/ 132):</p>
+        </div>
+        <div class="content">
+          <p>فَائِدَةٌ مَنَعَ السُّلْطَانُ الْمُسْتَحِقِّينَ ‌حُقُوقَهُمْ ‌مِنْ ‌بَيْتِ ‌الْمَالِ فَفِي الْإِحْيَاءِ قِيلَ لَا يَجُوزُ لِأَحَدِهِمْ أَخْذُ شَيْءٍ مِنْهُ أَصْلًا؛ لِأَنَّهُ مُشْتَرَكٌ وَلَا يَدْرِي حِصَّتَهُ مِنْهُ وَهَذَا غُلُوٌّ وَقِيلَ يَأْخُذُ كِفَايَةَ يَوْمٍ بِيَوْمٍ وَقِيلَ كِفَايَةَ سَنَةٍ وَقِيلَ مَا يُعْطَى إذَا كَانَ قَدْرَ حَقِّهِ وَالْبَاقُونَ مَظْلُومُونَ وَهَذَا هُوَ الْقِيَاسُ؛ لِأَنَّ الْمَالَ لَيْسَ مُشْتَرَكًا بَيْنَ الْمُسْلِمِينَ وَمِنْ ثَمَّ مَنْ مَاتَ وَلَهُ فِيهِ حَقٌّ لَا يَسْتَحِقُّهُ وَارِثُهُ اهـ وَخَالَفَهُ ابْنُ عَبْدِ السَّلَامِ فَمَنَعَ الظَّفَرَ فِي الْأَمْوَالِ الْعَامَّةِ لِأَهْلِ الْإِسْلَامِ وَمَالِ الْمَجَانِينِ وَالْأَيْتَامِ وَأَفْتَى الْمُصَنِّفُ بِأَنَّ مَنْ غَصَبَ أَمْوَالًا لِأَشْخَاصٍ وَخَلَطَهَا ثُمَّ فَرَّقَهَا عَلَيْهِمْ بِقَدْرِ حُقُوقِهِمْ جَازَ لِكُلٍّ أَخْذُ قَدْرِ حَقِّهِ، أَوْ عَلَى بَعْضِهِمْ لَزِمَ مَنْ وَصَلَ لَهُ شَيْءٌ قِسْمَتُهُ عَلَيْهِ وَعَلَى الْبَاقِينَ بِنِسْبَةِ أَمْوَالِهِمْ وَمَا ذَكَرَهُ الْغَزَالِيُّ أَوْجَهُ مِمَّا ذَكَرَهُ ابْنُ عَبْدِ السَّلَامِ إذْ كَلَامُهُمْ الْآتِي فِي الظَّفْرِ يَرُدُّهُ وَلَا يُعَارِضُهُ هَذَا الْإِفْتَاءُ؛ لِأَنَّ أَعْيَانَ الْأَمْوَالِ يُحْتَاطُ لَهَا مَا لَا يُحْتَاطُ لِمُجَرَّدِ تَعَلُّقِ الْحُقُوقِ (يُقَدَّمُ الْأَهَمُّ فَالْأَهَمُ)</p>
+        </div>
+      </div>
+      <article class="reaksi">
+        <div class="reaction-buttons">
+            <button id="likeButton">
+                <span class="icon"><i class="fas fa-thumbs-up"></i></span> Like: <span id="likeCount">0</span>
+            </button>
+            <p><span class="icon"><i class="fas fa-eye"></i></span> Pengunjung: <span id="viewCount">0</span></p>
+        </div>
+        <div class="share-buttons">
+            <button id="shareWhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </button>
+            <button id="shareOther">
+                <i class="fas fa-share-alt"></i>
+            </button>
+            <button id="copyUrlButton">
+                <i class="fas fa-copy"></i>
+            </button>
+        </div>
+    </article>
+    </div>
+  <script>
+    function toggleMenu(x) {
+      x.classList.toggle("change");
+      var menuItems = document.getElementById("menuItems");
+      menuItems.classList.toggle("show");
+    }
+
+    function showPage(pageUrl) {
+    // Mengarahkan ke halaman baru
+    window.location.href = pageUrl;
+    
+    // Menyembunyikan menu dan tombol hamburger
+    document.getElementById('menuItems').classList.remove('show');
+    document.querySelector('.hamburger').classList.remove('change');
+}
+
+
+    window.onscroll = function () {
+      var header = document.getElementById("header");
+      if (document.documentElement.scrollTop > 50) {
+        header.classList.add("show");
+      } else {
+        header.classList.remove("show");
+      }
+    };
+  </script>
+  
+  <script>
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycby1gxQTZzoGAjAFXUS9gcaS7Fkx-1yMF3YtRnq4p1ttlbH7Rg_FZekVPW4Rby_UUTkFAg/exec';
+    const articleId = 'LISTRIKSETINGAN'; // Ganti dengan ID artikel yang sesuai
+
+    async function fetchData(action) {
+        try {
+            const response = await fetch(`${scriptUrl}?action=${action}&articleId=${articleId}`);
+            if (!response.ok) throw new Error('Respon jaringan tidak oke');
+            const data = await response.text();
+            return data;
+        } catch (error) {
+            console.error(`Kesalahan fetch: ${error}`);
+            return '0'; // Mengembalikan '0' jika terjadi kesalahan
+        }
+    }
+
+    async function getLike() {
+        const likeCount = await fetchData('getLike');
+        document.getElementById('likeCount').textContent = likeCount;
+    }
+
+    async function setLike() {
+        const likeCount = await fetchData('setLike');
+        document.getElementById('likeCount').textContent = likeCount;
+    }
+
+    async function getView() {
+        const viewCount = await fetchData('getView');
+        document.getElementById('viewCount').textContent = viewCount;
+    }
+
+    async function setView() {
+        const viewCount = await fetchData('setView');
+        document.getElementById('viewCount').textContent = viewCount;
+    }
+
+    document.getElementById('likeButton').addEventListener('click', async function() {
+        await setLike();
+        this.classList.add('liked');
+    });
+
+    window.onload = async function() {
+        await getLike();
+        await getView();
+        await setView();
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const title = document.title;
+        const url = window.location.href;
+        const text = `${title}\n${url}\n__________\nIkuti juga sosial media kami:
+        \nFacebook: https://www.facebook.com/profile.php?id=61553817645744
+        \nInstagram: https://www.instagram.com/safari_bahtsul_masail/
+        \nYouTube: https://www.youtube.com/@safaribahtsulmasail`;
+
+        document.getElementById('shareWhatsApp').addEventListener('click', function() {
+            const encodedText = encodeURIComponent(text);
+            window.location.href = `whatsapp://send?text=${encodedText}`;
+        });
+
+        document.getElementById('shareOther').addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: text,
+                    url: url
+                }).catch(console.error);
+            } else {
+                alert('Berbagi tidak didukung di browser ini.');
+            }
+        });
+
+        document.getElementById('copyUrlButton').addEventListener('click', function() {
+            navigator.clipboard.writeText(text).then(() => {
+                console.log("Teks berhasil disalin ke clipboard!");
+                alert("Teks berhasil disalin ke clipboard!");
+            }).catch(err => {
+                console.error("Gagal menyalin teks: ", err);
+            });
+        });
+    });
+</script>
+<div class="section mushohih">
+  <div class="title">Mushohih</div>
+  <div class="name">K. Bahirul Mawahib</div>
+</div>
+
+<div class="section perumus">
+  <div class="title">Perumus</div>
+  <div class="name">K. Ahmad Fathunnuha</div>
+  <div class="name">Kh. Abdus Salam</div>
+  <div class="name">K. Abdul Kafi Ridho</div>
+</div>
+
+<div class="section moderator">
+  <div class="title">Moderator</div>
+  <div class="name">Sdr. Muhammad Nur Ahsan</div>
+</div>
+
+<div class="section notulen">
+  <div class="title">Notulen</div>
+  <div class="name">Sdr. Teguh Sulistyawan</div>
+  <div class="name">Sdr. Zainal Abidin</div>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="contact-info">
+      <h1 class="f">Kontak Kami</h1>
+      <p class="address">
+        <i class="fas fa-map-marker-alt"></i> Basecamp: <br>
+        Pengurus Safari Bahtsul Masail<br>
+        Pondok Pesantren Manba'ul 'Ulum Sidomulyo Tanggungharjo<br>
+        Rt. 06 Rw. 03 Kec. Grobogan<br>
+        Kab. Grobogan 58152<br>
+        Jawa Tengah
+      </p>
+      <p><i class="fas fa-envelope"></i> safaribahtsulmasail@gmail.com</p>
+      <p><i class="fas fa-phone-alt"></i> +62 823 3163 0180</p>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61553817645744" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/6283856996004" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/safari_bahtsul_masail?igsh=MWU0a2xpaWJweDhxdg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@safaribahtsulmasail?si=bV_69lSbOUnQl6Zn" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="copy">&copy; 2024 Safari Bahtsul Masail. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

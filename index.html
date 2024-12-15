@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&display=swap" rel="stylesheet">  
+<link rel="icon" type="image/png" href="IKON/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="IKON/favicon-16x16.png" sizes="16x16" />
+
+<meta property="og:title" content="SAFARI BAHTSUL MASAIL">
+<meta property="og:description" content="Safari Bahtsul Masail (SBM) adalah forum musyawarah antar pondok pesantren yang berfokus pada pembahasan permasalahan hukum fiqih waqiiyah (aktual).">
+<meta property="og:image" content="https://safaribahtsulmasail.github.io/GAMBAR/SAMPULSBM.jpg">
+<meta property="og:url" content="safaribahtsulmasail.github.io">
+<meta property="og:type" content="SAFARI BAHTSUL MASAIL">
+<meta property="og:site_name" content="safaribahtsulmasail.github.io">
+    <title>Safari Bahtsul Masail</title>
+    <style>
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            margin: 0%;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #00A85A;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .header.show {
+            transform: translateY(0);
+        }
+        .header img {
+            max-height: 40px;
+        }
+        .menu {
+            position: relative;
+            z-index: 10000;
+            margin-right: 20px;
+        }
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #f0f0f0;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+        .menu-items {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            top: 50px;
+            right: 0px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 150px;
+            transition: visibility 0s, opacity 0.5s ease;
+        }
+        .menu-items.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        .menu-items button {
+            display: block;
+            width: 100%;
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+        }
+        .menu-items button:hover {
+            background-color: #f0f0f0;
+        }
+        .change .bar1 {
+            transform: translateY(8px) rotate(-45deg);
+        }
+        .change .bar2 {
+            opacity: 0;
+        }
+        .change .bar3 {
+            transform: translateY(-8px) rotate(45deg);
+        }
+        .content {
+        display: flex; /* Menggunakan Flexbox untuk penataan */
+        justify-content: center; /* Menyelaraskan secara horizontal */
+        align-items: center; /* Menyelaraskan secara vertikal */
+        
+        }
+        .LOGO {
+            height: 150px; /* Ukuran tinggi logo */
+            margin-top: 80px;
+            margin-bottom: 50px;
+        }
+        .isi{
+            margin: 7px;
+        }     
+@font-face {
+  font-family: 'CustomArabicFont';
+  src: url('arabic-font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+.rtl, .indonesia {
+  text-align: justify;
+  font-size: 13px;
+}
+.rtl {
+  direction: rtl;
+  font-family: 'CustomArabicFont', 'Traditional Arabic', Tahoma, sans-serif;
+}
+#dataTable1,
+#dataTable2,
+#dataTable0 {
+  width: 100%;
+  max-width: 100%;
+}
+#dataTable1 th,
+#dataTable1 td,
+#dataTable2 th,
+#dataTable2 td,
+#dataTable0 th,
+#dataTable0 td {
+  display: block;
+  padding: 2px;
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 3px;
+  color: black;
+}
+.table-image {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transisi halus */
+  width: 100%; /* Lebar gambar disesuaikan dengan kolom */
+  height: 100%; /* Tinggi otomatis agar proporsional */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#dataTable1 th:nth-child(1),
+#dataTable1 td:nth-child(1),
+#dataTable0 th:nth-child(1),
+#dataTable0 td:nth-child(1) {
+  color:#ffffff; /* Membuat teks tidak terlihat */
+  text-shadow: none;  /* Menghapus bayangan teks jika ada */
+  width: 70px; /* 2 units lebar */
+  height: 70px; /* 3 units tinggi */
+  margin-top: 0px;
+  font-size: 17px;
+}
+#dataTable2 th:nth-child(1),
+#dataTable2 td:nth-child(1){
+  color:#ffffff; /* Membuat teks tidak terlihat */
+  text-shadow: none;  /* Menghapus bayangan teks jika ada */
+  width: 128px; /* 2 units lebar */
+  height: 72px; /* 3 units tinggi */
+  margin-top: 0px;
+  font-size: 17px;
+}
+#dataTable1 th:nth-child(2),
+#dataTable1 td:nth-child(2),
+#dataTable0 th:nth-child(2),
+#dataTable0 td:nth-child(2) {
+    margin-top: -77px;
+    margin-left: 80px;
+    font-size: 12px; /* Ukuran font */
+    width: auto; /* Lebar otomatis */
+    height: auto; /* Tinggi otomatis */
+    color: #ffffff; /* Warna teks */
+    padding: 2px; /* Padding untuk tampilan yang lebih baik */
+    background-color:  #00A85A;
+    border-radius: 2px; /* Sudut melengkung */
+    width:fit-content; /* 2 units lebar */  
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+#dataTable2 th:nth-child(2),
+#dataTable2 td:nth-child(2) {
+    margin-top: -77px;
+    margin-left: 140px;
+    font-size: 12px; /* Ukuran font */
+    width: auto; 
+    height: auto; /* Tinggi otomatis */
+    color: #ffffff; /* Warna teks */
+    padding: 2px; /* Padding untuk tampilan yang lebih baik */
+    background-color:  #00A85A;
+    border-radius: 2px; /* Sudut melengkung */
+    width:fit-content; /* 2 units lebar */  
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+#dataTable1 th:nth-child(3),
+#dataTable1 td:nth-child(3),
+#dataTable0 th:nth-child(3),
+#dataTable0 td:nth-child(3) {
+    margin-top: -5px;
+    margin-left: 78px;
+    font-size: 10px; /* Ukuran font */
+    width: auto; /* Lebar otomatis */
+    height: auto; /* Tinggi otomatis */
+    color: #000000; /* Warna teks */
+    font-family: "Asap", sans-serif;
+
+}
+#dataTable2 th:nth-child(3),
+#dataTable2 td:nth-child(3) {
+    margin-top: -5px;
+    margin-left: 140px;
+    font-size: 10px; /* Ukuran font */
+    width: auto; /* Lebar otomatis */
+    height: auto; /* Tinggi otomatis */
+    color: #000000; /* Warna teks */
+    font-family: "Asap", sans-serif;
+}
+
+#dataTable1 th:nth-child(4),
+#dataTable1 td:nth-child(4),
+#dataTable0 th:nth-child(4),
+#dataTable0 td:nth-child(4) {
+    margin-left: 78px;
+    margin-top: -5px;
+    font-size: 10px; /* Ukuran font */
+    color:#919191; 
+    font-family: "Asap", sans-serif;
+
+}
+#dataTable2 th:nth-child(4),
+#dataTable2 td:nth-child(4) {
+    margin-left: 140px;
+    margin-top: -5px;
+    font-size: 10px; /* Ukuran font */
+    color:#919191; 
+    font-family: "Asap", sans-serif;
+
+}
+
+#dataTable1 th:nth-child(5),
+#dataTable1 td:nth-child(5),
+#dataTable2 th:nth-child(5),
+#dataTable2 td:nth-child(5),
+#dataTable0 th:nth-child(5),
+#dataTable0 td:nth-child(5) {
+  display: none;
+    
+}
+.hidden-text div {
+  display: none;
+}
+
+#dataTable1 tr:first-child td,
+#dataTable2 tr:first-child td,
+#dataTable0 tr:first-child td {
+  border-radius: 0px;
+  background-color: black;
+  color: #ffffff;
+}
+.TABEL {
+  margin: 0px;
+  border-collapse: collapse;
+      background-color: #f9f9f9; /* Latar belakang kutipan yang lebih terang */
+
+}
+#dataTable1 td.rtl,
+#dataTable2 td.rtl,
+#dataTable0 td.rtl {
+  direction: rtl;
+}
+#dataTable1 td.indonesia,
+#dataTable2 td.indonesia,
+#dataTable0 td.indonesia {
+  direction: ltr;
+}
+.underline-text {
+color:#ff1a1a;
+}
+
+.center-text {
+    display:block;
+    margin-bottom: -20px;
+    text-align: center;
+    }
+.quote-text {
+    display: block;
+    text-align: left;
+    margin-bottom: -20px;
+    font-family: "Lato", sans-serif;
+}
+.bold {
+  font-weight: bold;
+}
+.table-row {
+  background-color: #f9f9f9; /* Latar belakang kutipan yang lebih terang */
+  padding: 5px; 
+  height: auto;
+  width: auto;
+  min-height: 80px;
+  margin-bottom: 2px; 
+  border-radius: 3px; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#dataTable1 tbody tr:first-child,
+#dataTable2 tbody tr:first-child,
+#dataTable0 tbody tr:first-child {
+  display: none;
+}
+.konten {
+    width: auto;
+    font-weight: bold;
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    color: #00A85A;
+  position: relative;
+  margin-bottom: 10px;
+  background-color: #f9f9f9; /* Latar belakang kutipan yang lebih terang */
+border-left: 5px solid #00A85A;
+    padding: 5px 8px;
+    border-radius: 3px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-size: 20px;
+    z-index: 100;
+    justify-content: space-between; /* Untuk menempatkan konten di ujung kanan */
+    align-items: center; /* Untuk memastikan konten dan ikon berada di tengah vertikal */
+    text-decoration: none;
+}
+.konten .fa-chevron-right {
+  font-size: 12px;
+}
+.konten span {
+  flex: 1; /* Menggunakan flex untuk mengisi sisa ruang di sebelah kiri */
+}
+.konten .fas {
+  margin-left: 10px; /* Jarak antara teks dan ikon */
+}
+.konten1 {
+  width: auto;
+  font-weight: bold;
+  display: flex;
+  color: #00A85A;
+  position: relative;
+  margin-bottom: 10px;
+  background-color: #f9f9f9; /* Latar belakang kutipan yang lebih terang */
+border-left: 5px solid #00A85A;
+  padding: 5px 8px;
+  border-radius: 3px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: 20px;
+  z-index: 100;
+  justify-content: space-between; /* Untuk menempatkan konten di ujung kanan */
+  align-items: center;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.konten1 .fa-chevron-right {
+  font-size: 12px;
+}
+.konten1 span {
+  flex: 1; /* Menggunakan flex untuk mengisi sisa ruang di sebelah kiri */
+}
+.konten1 .fas {
+  margin-left: 10px; /* Jarak antara teks dan ikon */
+}
+/* Font Awesome Icon Styles */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+/* Mengimpor Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* Footer Styling */
+.footer {
+    background: linear-gradient(135deg, #004d40, #2e7d32); /* Gradasi hijau gelap */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Font utama */
+}
+
+/* Footer Container Styling */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Contact Info Styling */
+.contact-info {
+    max-width: 500px; /* Membatasi lebar konten */
+}
+
+.contact-info h1.f {
+    font-size: 24px; /* Ukuran teks elegan */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff; /* Teks berwarna kuning untuk kontras */
+    font-family: 'Playfair Display', serif; /* Font elegan untuk judul */
+}
+
+.contact-info p {
+    font-size: 14px; /* Ukuran teks kecil dan bersih */
+    line-height: 1.6;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white; /* Teks berwarna putih */
+}
+
+.contact-info .address {
+    margin: 0 auto; /* Menjaga alamat tetap di tengah */
+    text-align: left; /* Menjaga teks alamat tetap rapi */
+}
+
+.contact-info i {
+    font-size: 16px; /* Ukuran ikon lebih kecil */
+    color: white;
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    background-color: #ffffff33; /* Warna putih semi-transparan */
+    color: white;
+    width: 40px; /* Ukuran ikon yang seragam */
+    height: 40px;
+    font-size: 20px; /* Ukuran ikon konsisten */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Bentuk lingkaran sempurna */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: #ffeb3b; /* Background kuning saat di-hover */
+    color: #004d40;
+    transform: scale(1.2); /* Pembesaran saat hover */
+}
+
+/* Footer Bottom Styling */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 12px; /* Ukuran teks copyright lebih kecil */
+    color: #b2fab4; /* Warna teks yang lembut */
+    border-top: 1px solid #ffffff33; /* Garis pemisah tipis */
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Font yang bersih */
+}
+
+/* Responsive Styling */
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contact-info, .social-icons {
+        flex: 1;
+    }
+
+    .contact-info {
+        text-align: left;
+    }
+
+    .social-icons {
+        text-align: right;
+    }
+}/* Mengimpor Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+/* Wrapper untuk profil */
+.profil-wrapper {
+    max-width: 800px; /* Maksimal lebar untuk menjaga teks tetap rapi */
+    margin: 20px auto; /* Pusatkan wrapper secara horizontal dengan jarak lebih banyak */
+    border-radius: 10px; /* Sudut membulat yang lebih besar */
+}
+
+/* Styling untuk judul */
+.profil-title {
+    position: relative; /* Posisi relatif untuk penempatan judul */
+    margin: 0 0 10px 0; /* Menempatkan judul di atas wrapper */
+    padding: 10px 20px; /* Padding di sekitar teks judul */
+    background-color: #f9f9f9; /* Latar belakang kutipan yang lebih terang */
+    color: #00A85A; /* Warna teks judul hijau */
+    font-family: 'Josefin Sans', sans-serif; /* Font bergaya serif */
+    font-size: 20px; /* Ukuran font untuk judul */
+    font-weight: 700; /* Font tebal */
+    border-left: 5px solid #00A85A; /* Garis kiri berwarna hijau untuk aksen */
+    border-radius: 5px; /* Sudut membulat pada background judul */
+    z-index: 10; /* Pastikan judul berada di atas konten lainnya */
+    
+}
+
+/* Styling untuk kutipan */
+.profil-content {
+    font-family: 'Roboto', sans-serif; /* Font yang bersih dan modern */
+    font-size: 16px; /* Ukuran teks yang nyaman dibaca */
+    line-height: 1.8; /* Jarak antar baris untuk keterbacaan yang baik */
+    color: #333; /* Warna teks gelap untuk kontras yang baik */
+    text-align: justify; /* Menyelaraskan teks secara justify */
+    border-left: 5px solid #00A85A; /* Garis kiri untuk menandai kutipan */
+    padding-left: 20px; /* Padding di sisi kiri kutipan */
+    margin: 0; /* Menghapus margin default */
+    font-style: italic; /* Gaya font miring untuk kutipan */
+    background-color: #f9f9f9; /* Latar belakang kutipan yang lebih terang */
+    border-radius: 5px; /* Sudut membulat pada kutipan */
+    padding: 20px; /* Padding di sekitar teks kutipan */
+}
+.kubah-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.kubah {
+    width: 100%; /* Atur sesuai ukuran kubah */
+    max-width: 400px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* Pastikan kubah berada di atas header */
+}
+
+</style>
+</head>
+<body>
+  <div class="kubah-container">
+    <img class="kubah" src="GAMBAR/kubah.png" alt="Kubah">
+</div>
+    <div class="header" id="header">
+        <img class="IKON" src="GAMBAR/IKON.png" alt="Ikon">
+        <img class="JUDUL" src="GAMBAR/HEADER.png" alt="Judul">
+        <div class="menu">
+            <div class="hamburger" onclick="toggleMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <div class="menu-items" id="menuItems">
+                <button class="nav-button" onclick="showPage('index.html')">HOME</button>
+                <button class="nav-button" onclick="showPage('DATA/KONTEN1.html')">HASIL KEPUTUSAN</button>
+                <button class="nav-button" onclick="showPage('DATA/KONTEN3.HTML')">LIVE STREAMING</button>
+                <button class="nav-button" onclick="showPage('MAKTABAH/PERPUSTAKAAN.html')">MAKTABAH</button>
+                <button class="nav-button" onclick="showPage('gallery.html')">ADMIN</button>
+                <button class="nav-button" onclick="location.reload()">REFRESH</button>
+
+            </div>
+            
+        </div>
+    </div>
+    <div class="content">
+        <img class="LOGO" src="GAMBAR/LOGO.png" alt="Logo">
+    </div>
+    <script>
+        function toggleMenu(x) {
+            x.classList.toggle("change");
+            var menuItems = document.getElementById('menuItems');
+            menuItems.classList.toggle('show');
+        }
+
+        function showPage(pageUrl) {
+    // Mengarahkan ke halaman baru
+    window.location.href = pageUrl;
+    
+    // Menyembunyikan menu dan tombol hamburger
+    document.getElementById('menuItems').classList.remove('show');
+    document.querySelector('.hamburger').classList.remove('change');
+}
+
+
+        window.onscroll = function() {
+            var header = document.getElementById('header');
+            if (document.documentElement.scrollTop > 50) {
+                header.classList.add('show');
+            } else {
+                header.classList.remove('show');
+            }
+        };
+    </script>
+    
+<div class="isi">
+  <div class="profil-wrapper">
+    <h2 class="profil-title">
+        Tentang Safari Bahtsul Masail
+    </h2>
+    <blockquote class="profil-content">
+        Safari Bahtsul Masail (SBM) adalah forum musyawarah antar pondok pesantren yang berfokus pada pembahasan permasalahan hukum fiqih waqiiyah (aktual). SBM bertujuan untuk menyatukan pondok pesantren di Kabupaten Grobogan, mendorong kerja sama dalam membangun dan mengembangkan forum bahtsul masail menjadi lebih baik. Melalui kolaborasi ini, SBM berupaya memperkuat jaringan pesantren, baik yang sudah mapan maupun yang baru mulai belajar, sehingga dapat bersama-sama menghadapi tantangan hukum kontemporer dengan solusi yang relevan dan aplikatif.
+    </blockquote>
+</div>
+
+    <a href="DATA/KONTEN1.html" class="konten">
+      <span>Hasil Keputusan</span>
+      <i class="fas fa-chevron-right"></i>
+    </a>   
+    <div id="image-container"></div>
+        <!-- Second table -->
+        <div class="chat-container">
+          <div class="chat-body" id="chatBody0">
+            <div class="TABEL">
+              <table id="dataTable0">
+                <tbody>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+        <a href="DATA/KONTEN3.html" class="konten1">
+          <span>Live Straming</span>
+          <i class="fas fa-chevron-right"></i>
+        </a> 
+        <!-- Second table -->
+        <div class="chat-container">
+          <div class="chat-body" id="chatBody2">
+            <div class="TABEL">
+              <table id="dataTable2">
+                <tbody>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <script>
+          function isArabic(text) {
+            const arabicRegex = /[\u0600-\u06FF]/;
+            return arabicRegex.test(text);
+          }
+        
+          const API_KEY = 'AIzaSyA8x0yI8zCPUgZktmGNvQVTzhm1fdZ0K74';
+    
+          const SPREADSHEET_ID_0 = '1IQdlwxHQA3sIbPKDBGBDwCpEuU_8UklpytoDwxeyVRQ';
+          const RANGE_0 = 'RUMUSAN';
+        
+          const SPREADSHEET_ID_1 = '1IQdlwxHQA3sIbPKDBGBDwCpEuU_8UklpytoDwxeyVRQ';
+          const RANGE_1 = '';
+        
+          const SPREADSHEET_ID_2 = '1IQdlwxHQA3sIbPKDBGBDwCpEuU_8UklpytoDwxeyVRQ';
+          const RANGE_2 = 'LIVE';
+        
+          function processText(text) {
+            let processedText = text.replace(/\*(.*?)\*/g, '<span class="underline-text">$1</span>');
+            processedText = processedText.replace(/\#(.*?)\#/g, '<span class="center-text">$1</span>');
+            processedText = processedText.replace(/\^(.*?)\^/g, '<span class="quote-text">$1</span>');
+            processedText = processedText.replace(/\$(.*?)\$/g, '<span class="bold">$1</span>');
+        
+            return processedText;
+          }
+        
+          function processDataAndPopulateTable(data, tableId) {
+            const values = data.values;
+            const tableBody = document.querySelector(`#${tableId} tbody`);
+            tableBody.innerHTML = ''; // Clear the table content before populating it
+            const imageContainer = document.getElementById('image-container');
+            imageContainer.innerHTML = ''; // Clear the image container content before populating it
+        
+            values.forEach(row => {
+              const newRow = document.createElement('tr'); // Create a new row element for each row
+              tableBody.appendChild(newRow); // Append the row to the table body
+        
+              // Create a new div for each row
+              const newRowDiv = document.createElement('div');
+              newRowDiv.classList.add('table-row'); // Add class for styling
+              newRowDiv.id = 'halaman'; // Add ID
+        
+              // Get URL from column E (index 4)
+              const url = row[4];
+        
+               newRowDiv.addEventListener('click', function() {
+            const cleanUrl = url.replace(/^https?:\/\//, '');
+            const finalUrl = `https://${cleanUrl}`;
+            window.location.href = finalUrl;
+    });
+              newRow.appendChild(newRowDiv); // Insert the row div into the table
+    
+              row.forEach((cellValue, index) => {
+                const newCell = document.createElement('td');
+                const isArabicText = isArabic(cellValue);
+        
+                if (cellValue.trim() === '-') {
+                  newCell.style.display = 'none';
+                } else {
+                  if (isArabicText) {
+                    newCell.classList.add('rtl');
+                  } else {
+                    newCell.classList.add('indonesia');
+                  }
+        
+                  const newText = document.createElement('div');
+                  newText.innerHTML = processText(cellValue).replace(/\n/g, '<br>');
+                  newCell.appendChild(newText);
+        
+                  // If cell is column A (index 0), process image URL and hide text
+                  if (index === 0 && cellValue.trim() !== '-') {
+                    const imgTag = document.createElement('img');
+                    const imageId = extractIdFromUrl(cellValue);
+                    if (imageId) {
+                      imgTag.src = `https://drive.google.com/thumbnail?id=${imageId}`;
+                      imgTag.alt = 'Page Image';
+                      imgTag.classList.add('table-image'); // Add class for styling image
+                      newCell.appendChild(imgTag);
+                    } else {
+                      console.log('ID not found in URL.');
+                    }
+                    newCell.classList.add('hidden-text'); // Add class to hide text
+                  }
+                }
+                newRowDiv.appendChild(newCell); // Insert cell into row div
+              });
+            });
+          }
+        
+          function getData(spreadsheetId, range, tableId) {
+            fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${API_KEY}`)
+              .then(response => response.json())
+              .then(data => processDataAndPopulateTable(data, tableId))
+              .catch(error => console.error('Error fetching data:', error));
+          }
+        
+          function extractIdFromUrl(url) {
+            const regex = /\/d\/(.*?)\//;
+            const match = url.match(regex);
+            if (match && match[1]) {
+              return match[1];
+            }
+            return null;
+          }
+          getData(SPREADSHEET_ID_0, RANGE_0, 'dataTable0');
+          getData(SPREADSHEET_ID_1, RANGE_1, 'dataTable1');
+          getData(SPREADSHEET_ID_2, RANGE_2, 'dataTable2');
+        </script>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="contact-info">
+      <h1 class="f">Kontak Kami</h1>
+      <p class="address">
+        <i class="fas fa-map-marker-alt"></i> Basecamp: <br>
+        Pengurus Safari Bahtsul Masail<br>
+        Pondok Pesantren Manba'ul 'Ulum Sidomulyo Tanggungharjo<br>
+        Rt. 06 Rw. 03 Kec. Grobogan<br>
+        Kab. Grobogan 58152<br>
+        Jawa Tengah
+      </p>
+      <p><i class="fas fa-envelope"></i> safaribahtsulmasail@gmail.com</p>
+      <p><i class="fas fa-phone-alt"></i> +62 823 3163 0180</p>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61553817645744" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/6283856996004" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/safari_bahtsul_masail?igsh=MWU0a2xpaWJweDhxdg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@safaribahtsulmasail?si=bV_69lSbOUnQl6Zn" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Safari Bahtsul Masail. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
